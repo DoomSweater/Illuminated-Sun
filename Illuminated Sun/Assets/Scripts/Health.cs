@@ -65,6 +65,7 @@ public class Health : MonoBehaviour
     public void Death()
     {
         print("player is dead");
+
     }
 
 }
