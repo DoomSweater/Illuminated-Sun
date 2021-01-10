@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio for Mac
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{96D50C23-C1A2-BCA4-37B5-099EC8E81F70}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FMODUnityResonance", "FMODUnityResonance.csproj", "{982CD6DC-285F-DDFC-8B95-3EFB7384BC43}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FMODUnity", "FMODUnity.csproj", "{5668079A-2026-EF7E-8CD2-3487B813CBF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{96D50C23-C1A2-BCA4-37B5-099EC8E81F70}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FMODUnityEditor", "FMODUnityEditor.csproj", "{EE78C1F4-2B7F-440F-684F-8C00B3C1C636}"
 EndProject
@@ -17,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{96D50C23-C1A2-BCA4-37B5-099EC8E81F70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{96D50C23-C1A2-BCA4-37B5-099EC8E81F70}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{96D50C23-C1A2-BCA4-37B5-099EC8E81F70}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{96D50C23-C1A2-BCA4-37B5-099EC8E81F70}.Release|Any CPU.Build.0 = Release|Any CPU
 		{982CD6DC-285F-DDFC-8B95-3EFB7384BC43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{982CD6DC-285F-DDFC-8B95-3EFB7384BC43}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{982CD6DC-285F-DDFC-8B95-3EFB7384BC43}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -29,6 +25,10 @@ Global
 		{5668079A-2026-EF7E-8CD2-3487B813CBF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5668079A-2026-EF7E-8CD2-3487B813CBF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5668079A-2026-EF7E-8CD2-3487B813CBF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96D50C23-C1A2-BCA4-37B5-099EC8E81F70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96D50C23-C1A2-BCA4-37B5-099EC8E81F70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96D50C23-C1A2-BCA4-37B5-099EC8E81F70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96D50C23-C1A2-BCA4-37B5-099EC8E81F70}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EE78C1F4-2B7F-440F-684F-8C00B3C1C636}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EE78C1F4-2B7F-440F-684F-8C00B3C1C636}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE78C1F4-2B7F-440F-684F-8C00B3C1C636}.Release|Any CPU.ActiveCfg = Release|Any CPU

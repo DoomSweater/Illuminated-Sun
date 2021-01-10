@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\Health.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\Soul.cs" />
+    <Compile Include="Assets\Scripts\SoulBehaviour.cs" />
     <Compile Include="Assets\Scripts\SoundManager.cs" />
     <Compile Include="Assets\Scripts\UIManager.cs" />
     <Reference Include="UnityEngine">

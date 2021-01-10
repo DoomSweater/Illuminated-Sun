@@ -20,7 +20,24 @@ public class Player : MonoBehaviour
     private int _souls;
     private UIManager _uiManager;
 
+    //SOULS PREFABS
+    [SerializeField]
+    private GameObject darienPrefab;
 
+    [SerializeField]
+    private GameObject lilithPrefab;
+
+    [SerializeField]
+    private GameObject genePrefab;
+
+    //Spawn Stuff
+    [SerializeField]
+    private float spawnRate = 5.0f;
+    private float canSummon = -1f;
+
+    [SerializeField]
+    private GameObject soulContainer;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -38,29 +55,62 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+        Movement();
+
+
+        if(Input.GetKeyDown(KeyCode.Alpha1) && Time.time > canSummon)
+        {
+            Debug.Log("Darien Summoned");
+
+            canSummon = Time.time + spawnRate;
+            GameObject darien = Instantiate(darienPrefab, transform.position + new Vector3(-1.3f, 2, 0), Quaternion.identity);
+            darien.transform.parent = soulContainer.transform;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2) && Time.time > canSummon)
+        {
+            Debug.Log("Lilith Summoned");
+
+            canSummon = Time.time + spawnRate;
+            GameObject lilith = Instantiate(lilithPrefab, transform.position + new Vector3(-1.3f, 2, 0), Quaternion.identity);
+            lilith.transform.parent = soulContainer.transform;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3) && Time.time > canSummon)
+        {
+            Debug.Log("Gene Summoned");
+
+            canSummon = Time.time + spawnRate;
+            GameObject gene = Instantiate(genePrefab, transform.position + new Vector3(-1.3f, 2, 0), Quaternion.identity);
+            gene.transform.parent = soulContainer.transform;
+        }
+
+
+    }
+
+    public void Movement()
+    {
         float horizontalInput = Input.GetAxis("Horizontal");
         Vector3 direction = new Vector3(horizontalInput, 0, 0);
         Vector3 velocity = direction * speed;
 
         if (_controller.isGrounded == true)
         {
-            if(Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 _yVelocity = jumpHeight;
-                _canDoubleJump = true; 
+                _canDoubleJump = true;
             }
         }
         else
         {
-            if(Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                if(_canDoubleJump == true)
+                if (_canDoubleJump == true)
                 {
                     _yVelocity += jumpHeight;
                     _canDoubleJump = false;
                 }
-                
+
             }
             _yVelocity -= gravity;
         }
@@ -68,7 +118,6 @@ public class Player : MonoBehaviour
         velocity.y = _yVelocity;
 
         _controller.Move(velocity * Time.deltaTime);
-
     }
 
     public void AddSouls()
