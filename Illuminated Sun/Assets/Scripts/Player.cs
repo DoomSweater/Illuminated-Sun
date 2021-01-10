@@ -37,7 +37,12 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     private GameObject soulContainer;
-    
+
+    // Instantiated character objects
+    private GameObject darien;
+    private GameObject lilith;
+    private GameObject gene;
+
 
     // Start is called before the first frame update
     void Start()
@@ -64,24 +69,27 @@ public class Player : MonoBehaviour
             Debug.Log("Darien Summoned");
 
             canSummon = Time.time + spawnRate;
-            GameObject darien = Instantiate(darienPrefab, transform.position + new Vector3(-1.3f, 2, 0), Quaternion.identity);
+            darien = Instantiate(darienPrefab, transform.position + new Vector3(-1.3f, 2, 0), Quaternion.identity);
             darien.transform.parent = soulContainer.transform;
+            Invoke(nameof(DestroyDarien), 5f);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2) && Time.time > canSummon)
         {
             Debug.Log("Lilith Summoned");
 
             canSummon = Time.time + spawnRate;
-            GameObject lilith = Instantiate(lilithPrefab, transform.position + new Vector3(-1.3f, 2, 0), Quaternion.identity);
+            lilith = Instantiate(lilithPrefab, transform.position + new Vector3(-1.3f, 2, 0), Quaternion.identity);
             lilith.transform.parent = soulContainer.transform;
+            Invoke(nameof(DestroyLilith), 5f);
         }
         if (Input.GetKeyDown(KeyCode.Alpha3) && Time.time > canSummon)
         {
             Debug.Log("Gene Summoned");
 
             canSummon = Time.time + spawnRate;
-            GameObject gene = Instantiate(genePrefab, transform.position + new Vector3(-1.3f, 2, 0), Quaternion.identity);
+            gene = Instantiate(genePrefab, transform.position + new Vector3(-1.3f, 2, 0), Quaternion.identity);
             gene.transform.parent = soulContainer.transform;
+            Invoke(nameof(DestroyGene), 5f);
         }
 
 
@@ -125,5 +133,20 @@ public class Player : MonoBehaviour
         _souls++;
 
         _uiManager.UpdateSoulDisplay(_souls);
+    }
+
+    private void DestroyDarien()
+    {
+        Destroy(darien);
+    }
+
+    private void DestroyLilith()
+    {
+        Destroy(lilith);
+    }
+
+    private void DestroyGene()
+    {
+        Destroy(gene);
     }
 }
